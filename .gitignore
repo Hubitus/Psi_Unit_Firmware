@@ -1,0 +1,98 @@
+# =============================================================================
+# Psi Unit Software V1 — Git ignore
+# =============================================================================
+
+# --- Desktop simulator (CMake + Visual Studio) --------------------------------
+sim/build/
+
+# Случайная вложенная папка от cmake, запущенного не из sim/
+sim/GrowBoxController/
+
+# Временный дамп U8g2 (скачивается fetch_u8g2_font.ps1, в сборку не входит)
+sim/u8g2_fonts.c
+
+# --- Visual Studio / MSVC ---------------------------------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+*.filters.user
+
+*.obj
+*.o
+*.ilk
+*.pdb
+*.idb
+*.ipdb
+*.iobj
+*.exp
+*.lib
+*.dll
+*.exe
+*.app
+*.tlog
+*.lastbuildstate
+*.recipe
+*.FileListAbsolute.txt
+*.Build.CppClean.log
+*.opendb
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+*.vsidx
+*.ipch
+*.sdf
+*.ncb
+*.aps
+
+# --- CMake (если генерировали вне sim/build) --------------------------------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+
+# --- Arduino IDE / ESP32 ----------------------------------------------------
+# Сборка через IDE обычно в temp; эти паттерны — на случай arduino-cli / экспорта
+build/
+*.hex
+*.bin
+*.elf
+*.map
+*.eep
+
+# --- Python (tools/) --------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+
+# --- Секреты и локальные настройки ------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# --- OS ---------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# --- Редакторы (локальный кэш; skills/rules в .cursor/ остаются в репо) -----
+*.swp
+*~
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
